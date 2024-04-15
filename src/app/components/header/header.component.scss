@@ -1,6 +1,5 @@
 *{
     display: flex;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 p, span{
@@ -10,6 +9,10 @@ p, span{
     font-size: 30px;
     margin-top: 35px;
 } 
+.bi-geo-alt-fill{
+    font-size: 25px;
+    padding-right: 5px;
+}
 span{
     font-size: 22px;
 }
