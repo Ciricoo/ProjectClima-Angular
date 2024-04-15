@@ -1,0 +1,18 @@
+*{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p, span{
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    margin-top: 35px;
+} 
+span{
+    font-size: 22px;
+}
+.date{
+    font-size: 15px;
+}
