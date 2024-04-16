@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TemperatureComponent } from './components/temperature/temperature.component';
 import { WeatherForecastComponent } from './components/weather-forecast/weather-forecast.component';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { WeatherService } from './weather.service';
+
 
 @NgModule({
   declarations: [
@@ -16,9 +20,12 @@ import { WeatherForecastComponent } from './components/weather-forecast/weather-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    HttpClientJsonpModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

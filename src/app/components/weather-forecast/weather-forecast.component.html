@@ -1,73 +1,74 @@
 <main>
     <table>
           <tr>
-            <td>08:00</td>
+            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[0].date) }}</td>
             <td>
-              <div><img src="./assets/iconsClima/rain.svg" alt="Ícone do Tempo"></div>
+              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[0].condition + '.svg'" />
             </td>
             <td>
-              <div>20°</div>
+              <div>{{ weatherService.weatherData.results.forecast[0].max }}° / {{ weatherService.weatherData.results.forecast[0].min }}°</div>
             </td>
             <td>
-              <div>💧80%</div>
-            </td>
-          </tr>
-          <hr>
-          <tr>
-            <td>08:00</td>
-            <td>
-              <div><img src="./assets/iconsClima/rain.svg" alt="Ícone do Tempo"></div>
-            </td>
-            <td>
-              <div>20°</div>
-            </td>
-            <td>
-              <div>💧80%</div>
+              <div>💧{{ weatherService.weatherData.results.forecast[0].rain_probability }}%</div>
             </td>
           </tr>
           <hr>
           <tr>
-            <td>08:00</td>
+            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[1].date) }}</td>
             <td>
-              <div><img src="./assets/iconsClima/rain.svg" alt="Ícone do Tempo"></div>
+              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[1].condition + '.svg'" />
             </td>
             <td>
-              <div>20°</div>
+              <div>{{ weatherService.weatherData.results.forecast[1].max }}° / {{ weatherService.weatherData.results.forecast[1].min }}°</div>
             </td>
             <td>
-              <div>💧80%</div>
-            </td>
-          </tr>
-          <hr>
-          <tr>
-            <td>08:00</td>
-            <td>
-              <div><img src="./assets/iconsClima/rain.svg" alt="Ícone do Tempo"></div>
-            </td>
-            <td>
-              <div>20°</div>
-            </td>
-            <td>
-              <div>💧80%</div>
+              <div>💧{{ weatherService.weatherData.results.forecast[1].rain_probability }}%</div>
             </td>
           </tr>
           <hr>
           <tr>
-            <td>08:00</td>
+            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[2].date) }}</td>
             <td>
-              <div><img src="./assets/iconsClima/rain.svg" alt="Ícone do Tempo"></div>
+              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[2].condition + '.svg'" />
             </td>
             <td>
-              <div>20°</div>
+              <div>{{ weatherService.weatherData.results.forecast[2].max }}° / {{ weatherService.weatherData.results.forecast[2].min }}°</div>
             </td>
             <td>
-              <div>💧80%</div>
+              <div>💧{{ weatherService.weatherData.results.forecast[2].rain_probability }}%</div>
+            </td>
+          </tr>
+          <hr>
+          <tr>
+            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[3].date) }}</td>
+            <td>
+              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[3].condition + '.svg'" />
+            </td>
+            <td>
+              <div>{{ weatherService.weatherData.results.forecast[3].max }}° / {{ weatherService.weatherData.results.forecast[3].min }}°</div>
+            </td>
+            <td>
+              <div>💧{{ weatherService.weatherData.results.forecast[3].rain_probability }}%</div>
+            </td>
+          </tr>
+          <hr>
+          <tr>
+            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[4].date) }}</td>
+            <td>
+              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[4].condition + '.svg'" />
+            </td>
+            <td>
+              <div>{{ weatherService.weatherData.results.forecast[4].max }}° / {{ weatherService.weatherData.results.forecast[4].min }}°</div>
+            </td>
+            <td>
+              <div>💧{{ weatherService.weatherData.results.forecast[4].rain_probability }}%</div>
             </td>
           </tr>
           
           
       </table>
+
+      
     </main>
       
     
-      

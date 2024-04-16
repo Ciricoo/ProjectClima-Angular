@@ -1,7 +1,7 @@
 <div class="container">
-    <p class="clear">Clear</p>
+    <p class="clear">{{ weatherService.weatherData.results.description }}</p>
     <div class="dateTime">
-        <h1>19</h1>
+        <h1>{{ weatherService.weatherData.results.temp }}</h1>
         <h3 class="celcios">°C</h3>
     </div>
     </div>
