@@ -7,5 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProjectClima-Angular';
-
+  public toggle(){
+    document.body.classList.toggle('dark-mode');
+    document.querySelector(".cidades")?.classList.toggle('dark-mode');
+  }
 }

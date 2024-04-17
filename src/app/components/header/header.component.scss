@@ -2,10 +2,6 @@
     display: flex;
 }
 
-.dark-mode:root{
-    --color-select: #202325;
-    --hover-select: #2e3135;
-}
 
 p,
 span {
@@ -25,7 +21,7 @@ p{
     justify-content: center;
     padding: 1rem;
 
-    select {
+    .cidades {
         position: absolute;
         padding: 5px 10px;
         font-size: 15px;
@@ -39,9 +35,9 @@ p{
         box-shadow: 0 0 20px rgba(20,20,30,0.25);
 
         &.dark-mode{
-            background-color: var(--color-select);
+                background-color: #202325;
                 color: #ffffff;
-                border: 6px solid var(--color-select);
+                border: 6px solid #202325;
                 border-radius: 5px;
                 outline: none;
                 box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
@@ -55,7 +51,7 @@ p{
     select:hover{
         border: 3px solid #1951a5;
         &.dark-mode{
-            border: 3px solid --hover-select;
+            border: 3px solid #2e3135;
         }
     }
 
@@ -68,7 +64,7 @@ p{
         align-items: center;
 
         &.dark-mode{
-            background-color: var(--color-select);
+            background-color: #202325;
         }
     }
 
