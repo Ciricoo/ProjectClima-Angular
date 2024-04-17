@@ -10,7 +10,7 @@ export class TemperatureComponent {
   constructor(public weatherService: WeatherService){}
 
 ngOnInit(): void {
-  this.weatherService.fetchData();
+  this.weatherService.fetchData('');
 }
 
 }

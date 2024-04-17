@@ -1,21 +1,89 @@
-*{
+* {
     display: flex;
 }
 
-p, span{
+.dark-mode:root{
+    --color-select: #202325;
+    --hover-select: #2e3135;
+}
+
+p,
+span {
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 30px;
     margin-top: 35px;
-} 
-.bi-geo-alt-fill{
+}
+
+p{
+    margin-top: 3rem;
+}
+
+.change {
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    select {
+        position: absolute;
+        padding: 5px 10px;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        background-color: #1763aa;
+        color: #ffffff;
+        border: 6px solid #1763aa;
+        border-radius: 5px;
+        outline: none;
+        box-shadow: 0 0 20px rgba(20,20,30,0.25);
+
+        &.dark-mode{
+            background-color: var(--color-select);
+                color: #ffffff;
+                border: 6px solid var(--color-select);
+                border-radius: 5px;
+                outline: none;
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+        }
+        
+    }
+
+    select::-ms-expand{
+        display: none;
+    }
+    select:hover{
+        border: 3px solid #1951a5;
+        &.dark-mode{
+            border: 3px solid --hover-select;
+        }
+    }
+
+    select option{
+        background-color: #1763aa;
+        letter-spacing: 1.2px;
+        font-weight: 400;
+        font-size: 15px;
+        text-align: center;
+        align-items: center;
+
+        &.dark-mode{
+            background-color: var(--color-select);
+        }
+    }
+
+
+}
+
+.bi-geo-alt-fill {
     font-size: 25px;
     padding-right: 5px;
 }
-span{
+
+span {
     font-size: 22px;
 }
-.date{
+
+.date {
     font-size: 15px;
 }

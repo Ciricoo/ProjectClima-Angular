@@ -1,7 +1,22 @@
-<p *ngIf="weatherService.weatherData"><i class="bi bi-geo-alt-fill"></i>{{ weatherService.weatherData.results.city_name}}</p>
- 
+<p *ngIf="weatherService.weatherData">
+    <i class="bi bi-geo-alt-fill"></i>{{ weatherService.weatherData.results.city_name }}
+</p>
+
+<div class="change">
+<select (change)="onCityChange($event)" [(ngModel)]="selectedCity">
+    <option value="Jaraguá do Sul,SC">Jaraguá do Sul, SC</option>
+    <option value="Itajaí, SC">Itajaí, SC</option>
+    <option value="Pomerode, SC">Pomerode, SC</option>
+    <option value="São Paulo, SP">São Paulo, SP</option>
+    <option value="Rio de Janeiro, RJ">Rio de Janeiro, RJ</option>
+    <option value="Salvador, BA">Salvador, BA</option>
+    <option value="Brasília, DF">Brasília, DF</option>
+    <option value="Fortaleza, CE">Fortaleza, CE</option>
+    <option value="Belo Horizonte, MG">Belo Horizonte, MG</option>
+    <option value="Manaus, AM">Manaus, AM</option>
+    <option value="Curitiba, PR">Curitiba, PR</option>
+</select>
+</div>
 <span>
     {{getDayWeek(date)}}, {{getMonth(date)}} {{day}}, {{year}}
 </span>
-
-

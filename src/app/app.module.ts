@@ -9,6 +9,7 @@ import { WeatherForecastComponent } from './components/weather-forecast/weather-
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { WeatherService } from './weather.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { WeatherService } from './weather.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    BrowserAnimationsModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

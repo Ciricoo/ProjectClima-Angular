@@ -42,11 +42,25 @@ export class HeaderComponent implements OnInit{
     ];
     return months[date.getMonth()];
 }
+    selectedCity: string = '';
 
-constructor(public weatherService: WeatherService){}
+  constructor(public weatherService: WeatherService) {}
 
-ngOnInit(): void {
-  this.weatherService.fetchData();
-}
+  ngOnInit(): void {
+    this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
+    this.fetchWeatherData();
+  }
 
+  fetchWeatherData() {
+    this.weatherService.fetchData(this.selectedCity).subscribe((data) => {
+      this.weatherService.weatherData = data;
+    });
+
+  }
+
+  onCityChange(event: any) {
+    this.selectedCity = event.target.value;
+    this.fetchWeatherData();
+    localStorage.setItem('selectedCity',this.selectedCity);
+  }
 }

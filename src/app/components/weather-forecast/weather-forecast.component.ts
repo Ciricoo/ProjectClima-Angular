@@ -12,7 +12,7 @@ export class WeatherForecastComponent {
   constructor(public weatherService: WeatherService){}
 
 ngOnInit(): void {
-  this.weatherService.fetchData();
+  this.weatherService.fetchData('');
 }
 
   getFormattedDate(dateString: string): string {
