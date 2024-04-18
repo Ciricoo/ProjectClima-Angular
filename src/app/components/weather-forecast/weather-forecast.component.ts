@@ -12,13 +12,8 @@ export class WeatherForecastComponent {
   constructor(public weatherService: WeatherService){}
 
 ngOnInit(): void {
-  this.weatherService.fetchData('');
+  this.weatherService.fetchData();
 }
 
-  getFormattedDate(dateString: string): string {
-    const dateParts = dateString.split('/');
-    const day = dateParts[0];
-    const month = dateParts[1];
-    return `${day}/${month}`;
-  }
+  
 }

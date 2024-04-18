@@ -8,6 +8,7 @@
   position: absolute;
   margin-left: 30px;
   width: 50px;
+  
 }
 .checkbox {
   opacity: 0;
@@ -15,7 +16,7 @@
 }
 
 .label {
-  background-color: #111;
+  background-color: #1763aa;
   border-radius: 50px;
   cursor: pointer;
   display: flex;
@@ -25,6 +26,11 @@
   height: 25px;
   width: 50px;
   transform: scale(1.5);
+  
+  &.dark-mode{
+    background-color: #111;
+  }
+  
 
 }
 

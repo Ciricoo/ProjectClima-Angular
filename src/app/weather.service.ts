@@ -11,7 +11,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient){}
 
-  fetchData(city:string){
+  fetchData(city?:string){
     return this.http  
     .get<any>(
       `https://api.hgbrasil.com/weather?format=json-cors&key=a6c3f225&city_name=${city}`

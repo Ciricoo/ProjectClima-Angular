@@ -1,7 +1,7 @@
 <main>
     <table>
           <tr>
-            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[0].date) }}</td>
+            <td>{{ (weatherService.weatherData.results.forecast[0].weekday) }} - {{ (weatherService.weatherData.results.forecast[0].date) }}</td>
             <td>
               <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[0].condition + '.svg'" />
             </td>
@@ -14,7 +14,7 @@
           </tr>
           <hr>
           <tr>
-            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[1].date) }}</td>
+            <td>{{(weatherService.weatherData.results.forecast[1].weekday) }} - {{ (weatherService.weatherData.results.forecast[1].date) }}</td>
             <td>
               <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[1].condition + '.svg'" />
             </td>
@@ -27,7 +27,7 @@
           </tr>
           <hr>
           <tr>
-            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[2].date) }}</td>
+            <td>{{(weatherService.weatherData.results.forecast[2].weekday) }} - {{ (weatherService.weatherData.results.forecast[2].date) }}</td>
             <td>
               <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[2].condition + '.svg'" />
             </td>
@@ -40,7 +40,7 @@
           </tr>
           <hr>
           <tr>
-            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[3].date) }}</td>
+            <td>{{(weatherService.weatherData.results.forecast[3].weekday) }} - {{ (weatherService.weatherData.results.forecast[3].date) }}</td>
             <td>
               <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[3].condition + '.svg'" />
             </td>
@@ -53,7 +53,7 @@
           </tr>
           <hr>
           <tr>
-            <td>{{ getFormattedDate(weatherService.weatherData.results.forecast[4].date) }}</td>
+            <td>{{(weatherService.weatherData.results.forecast[4].weekday) }} - {{ (weatherService.weatherData.results.forecast[4].date) }}</td>
             <td>
               <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[4].condition + '.svg'" />
             </td>
