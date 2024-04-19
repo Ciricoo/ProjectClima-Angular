@@ -42,6 +42,7 @@
   width: 25px;
   transform: translateX(0px);
   transition: transform 0.2s linear;
+  transition: 0.5s;
 }
 
 .checkbox:checked + .label .ball {

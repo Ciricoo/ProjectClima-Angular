@@ -12,40 +12,20 @@ export class HeaderComponent implements OnInit{
   day: number = this.date.getDate();
   year: number = this.date.getFullYear();
   
-  getDayWeek(date: Date) {
-    const week = [
-      "Sunday",
-      "Monday", 
-      "Tuesday", 
-      "Wednesday", 
-      "Thursday", 
-      "Friday", 
-      "Saturday"
-    ]
-    return week[date.getDay()];
+  getDayWeek() {
+    const day = this.date.toLocaleString("default", {weekday:"long"});
+    return day.charAt(0).toUpperCase() + day.slice(1);
   }
 
-  getMonth(date: Date) {
-    const months = [
-      "January", 
-      "February", 
-      "March", 
-      "April", 
-      "May", 
-      "June", 
-      "July", 
-      "August", 
-      "September", 
-      "October",
-      "November",
-      "December"
-    ];
-    return months[date.getMonth()];
+  getMonth() {
+    const month = this.date.toLocaleString("default", { month: "long" });
+    return month.charAt(0).toUpperCase() + month.slice(1);
 }
-    selectedCity: string = '';
+
 
   constructor(public weatherService: WeatherService) {}
 
+  selectedCity: string = '';
   ngOnInit(): void {
     this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
     this.fetchWeatherData();

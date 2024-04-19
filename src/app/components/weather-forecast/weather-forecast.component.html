@@ -1,73 +1,21 @@
 <main>
     <table>
-          <tr>
-            <td>{{ (weatherService.weatherData.results.forecast[0].weekday) }} - {{ (weatherService.weatherData.results.forecast[0].date) }}</td>
-            <td>
-              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[0].condition + '.svg'" />
-            </td>
-            <td>
-              <div>{{ weatherService.weatherData.results.forecast[0].max }}° / {{ weatherService.weatherData.results.forecast[0].min }}°</div>
-            </td>
-            <td>
-              <div>💧{{ weatherService.weatherData.results.forecast[0].rain_probability }}%</div>
-            </td>
-          </tr>
-          <hr>
-          <tr>
-            <td>{{(weatherService.weatherData.results.forecast[1].weekday) }} - {{ (weatherService.weatherData.results.forecast[1].date) }}</td>
-            <td>
-              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[1].condition + '.svg'" />
-            </td>
-            <td>
-              <div>{{ weatherService.weatherData.results.forecast[1].max }}° / {{ weatherService.weatherData.results.forecast[1].min }}°</div>
-            </td>
-            <td>
-              <div>💧{{ weatherService.weatherData.results.forecast[1].rain_probability }}%</div>
-            </td>
-          </tr>
-          <hr>
-          <tr>
-            <td>{{(weatherService.weatherData.results.forecast[2].weekday) }} - {{ (weatherService.weatherData.results.forecast[2].date) }}</td>
-            <td>
-              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[2].condition + '.svg'" />
-            </td>
-            <td>
-              <div>{{ weatherService.weatherData.results.forecast[2].max }}° / {{ weatherService.weatherData.results.forecast[2].min }}°</div>
-            </td>
-            <td>
-              <div>💧{{ weatherService.weatherData.results.forecast[2].rain_probability }}%</div>
-            </td>
-          </tr>
-          <hr>
-          <tr>
-            <td>{{(weatherService.weatherData.results.forecast[3].weekday) }} - {{ (weatherService.weatherData.results.forecast[3].date) }}</td>
-            <td>
-              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[3].condition + '.svg'" />
-            </td>
-            <td>
-              <div>{{ weatherService.weatherData.results.forecast[3].max }}° / {{ weatherService.weatherData.results.forecast[3].min }}°</div>
-            </td>
-            <td>
-              <div>💧{{ weatherService.weatherData.results.forecast[3].rain_probability }}%</div>
-            </td>
-          </tr>
-          <hr>
-          <tr>
-            <td>{{(weatherService.weatherData.results.forecast[4].weekday) }} - {{ (weatherService.weatherData.results.forecast[4].date) }}</td>
-            <td>
-              <img [src]="'./assets/iconsClima/' + weatherService.weatherData.results.forecast[4].condition + '.svg'" />
-            </td>
-            <td>
-              <div>{{ weatherService.weatherData.results.forecast[4].max }}° / {{ weatherService.weatherData.results.forecast[4].min }}°</div>
-            </td>
-            <td>
-              <div>💧{{ weatherService.weatherData.results.forecast[4].rain_probability }}%</div>
-            </td>
-          </tr>
-          
-          
-      </table>
-
+      <ng-container *ngFor="let forecast of weatherService.weatherData.results.forecast.slice(0, 5); let i = index">
+        <tr>
+          <td>{{ forecast.weekday }} - {{ forecast.date }}</td>
+          <td>
+            <img [src]="'./assets/iconsClima/' + forecast.condition + '.svg'" />
+          </td>
+          <td>
+            <div>{{ forecast.max }}° / {{ forecast.min }}°</div>
+          </td>
+          <td>
+            <div>💧{{ forecast.rain_probability }}%</div>
+          </td>
+        </tr>
+        <hr *ngIf="i !== weatherService.weatherData.results.forecast.slice(0, 5).length - 1">
+      </ng-container>       
+    </table>
       
     </main>
       

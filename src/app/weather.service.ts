@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 
 export class WeatherService {
   weatherData: any;
+  selectedCity: string = '';
 
   constructor(private http: HttpClient){}
 

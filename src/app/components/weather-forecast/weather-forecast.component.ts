@@ -14,6 +14,5 @@ export class WeatherForecastComponent {
 ngOnInit(): void {
   this.weatherService.fetchData();
 }
-
   
 }

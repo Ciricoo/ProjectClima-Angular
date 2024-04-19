@@ -19,7 +19,7 @@ ngOnInit(){
 }
 
 public toggle(){
-  if(document.body.classList.contains('dark-mode')){
+  if(this.isChecked){
     this.enableLightMode();
   }
   else{
