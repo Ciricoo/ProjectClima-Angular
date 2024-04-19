@@ -52,7 +52,8 @@ export class HeaderComponent implements OnInit{
   }
 
   fetchWeatherData() {
-    this.weatherService.fetchData(this.selectedCity).subscribe((data) => {
+    this.weatherService.fetchData(this.selectedCity)
+    .subscribe((data) => {
       this.weatherService.weatherData = data;
     });
 

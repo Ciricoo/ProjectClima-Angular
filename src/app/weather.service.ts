@@ -17,4 +17,5 @@ export class WeatherService {
       `https://api.hgbrasil.com/weather?format=json-cors&key=a6c3f225&city_name=${city}`
     )
   }
+  
 }

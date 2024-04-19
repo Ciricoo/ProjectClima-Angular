@@ -8,12 +8,13 @@ import { takeUntil } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'ProjectClima-Angular';
-  
+  isChecked: boolean = false
   
 ngOnInit(){
   const theme = localStorage.getItem('theme');
   if (theme === 'dark'){
     this.enableDarkMode();
+    this.isChecked = true;
   }
 }
 
@@ -34,7 +35,6 @@ enableDarkMode(){
       option.classList.add("dark-mode");
     })
     document.querySelector(".label")?.classList.add('dark-mode');
-
     localStorage.setItem('theme', 'dark');
     
 }
@@ -51,8 +51,6 @@ enableLightMode(){
     localStorage.setItem('theme', 'light');
     
 }
-
-
 
 }
 

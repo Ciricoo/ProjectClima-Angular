@@ -1,5 +1,5 @@
 <div class="botao">
-    <input type="checkbox" class="checkbox"  id="chk" />
+    <input type="checkbox" class="checkbox" [(ngModel)]="isChecked" id="chk" />
     <label (click) = "toggle()" class="label" for="chk">
         <i class="bi bi-moon"></i>
         <i class="bi bi-brightness-high-fill"></i>
