@@ -10,7 +10,7 @@
 }
 
 .label {
-  background-color: #1763aa;
+  background-color: var(--label);
   border-radius: 50px;
   cursor: pointer;
   display: flex;
@@ -22,7 +22,7 @@
   transform: scale(1.5);
   
   &.dark-mode{
-    background-color: #111;
+    background-color: var(--label);
   }
   
 
@@ -54,3 +54,4 @@
   margin-top: -3px;
   margin-right: 2px;
 }
+

@@ -14,7 +14,8 @@ export class HeaderComponent implements OnInit{
 
   selectedCity: string = '';
 
-  cities = [
+
+    cities = [
     { name: "Jaraguá do Sul, SC"},
     { name: "Itajaí, SC"},
     { name: "Florianópolis, SC"},
@@ -35,6 +36,7 @@ export class HeaderComponent implements OnInit{
 
   fetchWeatherData() {
     this.weatherService.fetchData(this.selectedCity)
+
   }
 
   onCityChange(event: any) {

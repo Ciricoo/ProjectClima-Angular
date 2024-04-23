@@ -5,8 +5,9 @@
 <div class="change">
     <select #cidades class="cidades" (change)="onCityChange($event)" [(ngModel)]="selectedCity">
         <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
-    </select>
-</div>
+    </select >
+</div >
 <span >
     {{today | date: "fullDate"}}
 </span >
+

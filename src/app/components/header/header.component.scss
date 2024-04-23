@@ -2,7 +2,6 @@
     display: flex;
 }
 
-
 p,
 span {
     align-items: center;
@@ -27,17 +26,17 @@ p{
         font-size: 15px;
         letter-spacing: 0.5px;
         cursor: pointer;
-        background-color: #1763aa;
+        background-color: var(--input);
         color: #ffffff;
-        border: 6px solid #1763aa;
+        border: 6px solid var(--input);
         border-radius: 5px;
         outline: none;
         box-shadow: 0 0 20px rgba(20,20,30,0.25);
 
         &.dark-mode{
-                background-color: #202325;
+                background-color: var(--input);
                 color: #ffffff;
-                border: 6px solid #202325;
+                border: 6px solid var(--input);
                 border-radius: 5px;
                 outline: none;
                 box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
@@ -48,15 +47,9 @@ p{
     select::-ms-expand{
         display: none;
     }
-    select:hover{
-        border: 3px solid #1951a5;
-        &.dark-mode{
-            border: 3px solid #2e3135;
-        }
-    }
-
+   
     select option{
-        background-color: #1763aa;
+        background-color: var(--body-option);
         letter-spacing: 1.2px;
         font-weight: 400;
         font-size: 15px;
@@ -64,7 +57,7 @@ p{
         align-items: center;
 
         &.dark-mode{
-            background-color: #202325;
+            background: var(--body-option);
         }
     }
 
