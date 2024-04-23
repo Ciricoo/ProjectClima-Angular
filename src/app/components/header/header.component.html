@@ -4,18 +4,9 @@
 
 <div class="change">
     <select #cidades class="cidades" (change)="onCityChange($event)" [(ngModel)]="selectedCity">
-        <option value="Jaraguá do Sul,SC">Jaraguá do Sul, SC</option>
-        <option value="Itajaí, SC">Itajaí, SC</option>
-        <option value="Florianópolis, SC">Florianópolis, SC</option>
-        <option value="Itapema, SC">Itapema, SC</option>
-        <option value="Curitiba, PR">Curitiba, PR</option>
-        <option value="São Paulo, SP">São Paulo, SP</option>
-        <option value="Belo Horizonte, MG">Belo Horizonte, MG</option > 
-        <option value="Rio de Janeiro, RJ">Rio de Janeiro, RJ</option >
-        <option value="Salvador, BA">Salvador, BA</option >
-        <option value="Papanduva, SC">Papanduva, SC</option >
-    </select >
-</div >
+        <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
+    </select>
+</div>
 <span >
     {{today | date: "fullDate"}}
 </span >
