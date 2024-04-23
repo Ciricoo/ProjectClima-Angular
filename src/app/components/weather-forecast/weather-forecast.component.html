@@ -1,22 +1,19 @@
 <main>
-    <table>
-      <ng-container *ngFor="let forecast of weatherService.weatherData.results.forecast.slice(0, 5); let i = index">
-        <tr>
-          <td>{{ forecast.weekday }} - {{ forecast.date }}</td>
-          <td>
-            <img [src]="'./assets/iconsClima/' + forecast.condition + '.svg'" />
-          </td>
-          <td>
-            <div>{{ forecast.max }}° / {{ forecast.min }}°</div>
-          </td>
-          <td>
-            <div>💧{{ forecast.rain_probability }}%</div>
-          </td>
-        </tr>
-        <hr *ngIf="i !== weatherService.weatherData.results.forecast.slice(0, 5).length - 1">
-      </ng-container>       
-    </table>
-      
-    </main>
-      
-    
+  <table>
+    <ng-container *ngFor="let forecast of weatherService.weatherData.results.forecast.slice(0, 5); let i = index">
+      <tr>
+        <td>{{ forecast.weekday }} - {{ forecast.date }}</td>
+        <td>
+          <img [src]="'./assets/iconsClima/' + forecast.condition + '.svg'" />
+        </td>
+        <td>
+          <div>{{ forecast.max }}° / {{ forecast.min }}°</div>
+        </td>
+        <td>
+          <div>💧{{ forecast.rain_probability }}%</div>
+        </td>
+      </tr>
+      <hr *ngIf="i !== weatherService.weatherData.results.forecast.slice(0, 5).length - 1">
+    </ng-container>
+  </table>
+</main>

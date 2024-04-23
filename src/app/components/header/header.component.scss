@@ -11,7 +11,7 @@ span {
     margin-top: 35px;
 }
 
-p{
+p {
     margin-top: 3rem;
 }
 
@@ -31,24 +31,24 @@ p{
         border: 6px solid var(--input);
         border-radius: 5px;
         outline: none;
-        box-shadow: 0 0 20px rgba(20,20,30,0.25);
+        box-shadow: 0 0 20px rgba(20, 20, 30, 0.25);
 
-        &.dark-mode{
-                background-color: var(--input);
-                color: #ffffff;
-                border: 6px solid var(--input);
-                border-radius: 5px;
-                outline: none;
-                box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+        &.dark-mode {
+            background-color: var(--input);
+            color: #ffffff;
+            border: 6px solid var(--input);
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
         }
-        
+
     }
 
-    select::-ms-expand{
+    select::-ms-expand {
         display: none;
     }
-   
-    select option{
+
+    select option {
         background-color: var(--body-option);
         letter-spacing: 1.2px;
         font-weight: 400;
@@ -56,7 +56,7 @@ p{
         text-align: center;
         align-items: center;
 
-        &.dark-mode{
+        &.dark-mode {
             background: var(--body-option);
         }
     }

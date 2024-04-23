@@ -7,41 +7,40 @@ import { WeatherService } from 'src/app/weather.service';
   styleUrls: ['./header.component.scss'],
   providers: [],
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
   today = new Date();
- 
+
   constructor(public weatherService: WeatherService) {}
 
   selectedCity: string = '';
 
+  cities = [
+    { name: 'Jaraguá do Sul, SC' },
+    { name: 'Itajaí, SC' },
+    { name: 'Florianópolis, SC' },
+    { name: 'Itapema, SC' },
+    { name: 'Curitiba, PR' },
+    { name: 'São Paulo, SP' },
+    { name: 'Belo Horizonte, MG' },
+    { name: 'Rio de Janeiro, RJ' },
+    { name: 'Salvador, BA' },
+    { name: 'Fortaleza, CE' },
+    { name: 'Porto Alegre, RS' },
+  ];
 
-    cities = [
-    { name: "Jaraguá do Sul, SC"},
-    { name: "Itajaí, SC"},
-    { name: "Florianópolis, SC"},
-    { name: "Itapema, SC"},
-    { name: "Curitiba, PR"},
-    { name: "São Paulo, SP"},
-    { name: "Belo Horizonte, MG"},
-    { name: "Rio de Janeiro, RJ"},
-    { name: "Salvador, BA"},
-    { name: "Fortaleza, CE"},
-    { name: "Porto Alegre, RS"}
-  ]
-  
   ngOnInit(): void {
-    this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
+    this.selectedCity =
+      localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
     this.fetchWeatherData();
   }
 
   fetchWeatherData() {
-    this.weatherService.fetchData(this.selectedCity)
-
+    this.weatherService.fetchData(this.selectedCity);
   }
 
   onCityChange(event: any) {
     this.selectedCity = event.target.value;
     this.fetchWeatherData();
-    localStorage.setItem('selectedCity',this.selectedCity);
+    localStorage.setItem('selectedCity', this.selectedCity);
   }
 }
