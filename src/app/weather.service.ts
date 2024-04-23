@@ -14,7 +14,7 @@ export class WeatherService {
   fetchData(selectedCity:string){
     return this.http  
     .get<JSON>(
-      `https://api.hgbrasil.com/weather?format=json-cors&key=8ba9e74a&city_name=${selectedCity}`
+      `https://api.hgbrasil.com/weather?format=json-cors&key=a6c3f225&city_name=${selectedCity}`
     )
     .subscribe((data) => {
       this.weatherData = data;

@@ -5,9 +5,23 @@
 }
 
 body{
-    background-color: #2E6BC7;
+    background-color: var(--body);
 
     &.dark-mode{
-        background-color: rgb(41, 36, 36);
+        background-color: var(--body);
     }
+}
+
+:root {
+    --body-option: #1763aa ;
+    --label: #1763aa;
+    --body: #2E6BC7;
+    --input: #1763aa;
+}
+
+:root .dark-mode {
+    --body-option: #202325;
+    --label: #202325;
+    --body: rgb(41, 36, 36);
+    --input: #202325;
 }
