@@ -10,9 +10,6 @@ import { WeatherService } from 'src/app/weather.service';
 })
 export class WeatherForecastComponent {
   constructor(public weatherService: WeatherService){}
-
-ngOnInit(): void {
-  this.weatherService.fetchData();
-}
   
 }
+
