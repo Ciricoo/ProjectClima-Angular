@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from 'src/app/weather.service';
+
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-header',
@@ -29,8 +30,7 @@ export class HeaderComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.selectedCity =
-      localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
+    this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
     this.fetchWeatherData();
   }
 
@@ -38,8 +38,9 @@ export class HeaderComponent implements OnInit {
     this.weatherService.fetchData(this.selectedCity);
   }
 
-  onCityChange(event: any) {
-    this.selectedCity = event.target.value;
+  onCityChange(event: Event) {
+    const optionElement = event.target as HTMLOptionElement;
+    this.selectedCity = optionElement.value;
     this.fetchWeatherData();
     localStorage.setItem('selectedCity', this.selectedCity);
   }

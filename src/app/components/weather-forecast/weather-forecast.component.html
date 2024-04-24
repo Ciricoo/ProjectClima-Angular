@@ -1,6 +1,6 @@
 <main>
   <table>
-    <ng-container *ngFor="let forecast of weatherService.weatherData.results.forecast.slice(0, 5); let i = index">
+    <ng-container *ngFor="let forecast of weatherService.weatherData.results.forecast.slice(0, 5); let isLast = last">
       <tr>
         <td>{{ forecast.weekday }} - {{ forecast.date }}</td>
         <td>
@@ -13,7 +13,7 @@
           <div>💧{{ forecast.rain_probability }}%</div>
         </td>
       </tr>
-      <hr *ngIf="i !== weatherService.weatherData.results.forecast.slice(0, 5).length - 1">
+      <hr *ngIf="!isLast">
     </ng-container>
   </table>
 </main>

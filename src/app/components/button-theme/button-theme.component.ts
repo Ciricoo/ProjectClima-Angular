@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-button-theme',
   templateUrl: './button-theme.component.html',
   styleUrls: ['./button-theme.component.scss'],
 })
-export class ButtonThemeComponent {
+export class ButtonThemeComponent implements OnInit {
   isChecked: boolean = false;
+
+  constructor( private renderer: Renderer2, @Inject(DOCUMENT) private bodyElement: Document) {}
 
   ngOnInit() {
     const theme = localStorage.getItem('theme');
@@ -25,24 +28,12 @@ export class ButtonThemeComponent {
   }
 
   enableDarkMode() {
-    document.body.classList.add('dark-mode');
-    document.querySelector('.cidades')?.classList.add('dark-mode');
-    const options = document.querySelectorAll('.cidades option');
-    options.forEach((option) => {
-      option.classList.add('dark-mode');
-    });
-    document.querySelector('.label')?.classList.add('dark-mode');
+    this.renderer.addClass(this.bodyElement.body, 'dark-mode');
     localStorage.setItem('theme', 'dark');
   }
 
   enableLightMode() {
-    document.body.classList.remove('dark-mode');
-    document.querySelector('.cidades')?.classList.remove('dark-mode');
-    const options = document.querySelectorAll('.cidades option');
-    options.forEach((option) => {
-      option.classList.remove('dark-mode');
-    });
-    document.querySelector('.label')?.classList.remove('dark-mode');
+    this.renderer.removeClass(this.bodyElement.body, 'dark-mode');
     localStorage.setItem('theme', 'light');
   }
 }

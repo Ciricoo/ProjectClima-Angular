@@ -6,10 +6,6 @@
 
 body{
     background-color: var(--body);
-
-    &.dark-mode{
-        background-color: var(--body);
-    }
 }
 
 :root {
@@ -17,6 +13,7 @@ body{
     --label: #1763aa;
     --body: #2E6BC7;
     --input: #1763aa;
+    --boxShadow: 0 0 20px rgba(20, 20, 30, 0.25);
 }
 
 :root .dark-mode {
@@ -24,4 +21,5 @@ body{
     --label: #202325;
     --body: rgb(41, 36, 36);
     --input: #202325;
+    --boxShadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }

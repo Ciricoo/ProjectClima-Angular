@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TemperatureComponent } from './components/temperature/temperature.component';
 import { WeatherForecastComponent } from './components/weather-forecast/weather-forecast.component';
-import { WeatherService } from './weather.service';
+import { WeatherService } from './services/weather.service';
 import { ButtonThemeComponent } from './components/button-theme/button-theme.component';
 
 
