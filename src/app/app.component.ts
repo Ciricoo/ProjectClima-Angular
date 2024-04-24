@@ -8,6 +8,7 @@ import { takeUntil } from 'rxjs';
 })
 export class AppComponent {
   title = 'ProjectClima-Angular';
+  
 }
 
 

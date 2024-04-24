@@ -1,51 +1,39 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-button-theme',
   templateUrl: './button-theme.component.html',
-  styleUrls: ['./button-theme.component.scss']
+  styleUrls: ['./button-theme.component.scss'],
 })
-export class ButtonThemeComponent {
-  isChecked: boolean = false
-  
-  ngOnInit(){
+export class ButtonThemeComponent implements OnInit {
+  isChecked: boolean = false;
+
+  constructor( private renderer: Renderer2, @Inject(DOCUMENT) private bodyElement: Document) {}
+
+  ngOnInit() {
     const theme = localStorage.getItem('theme');
-    if (theme === 'dark'){
+    if (theme === 'dark') {
       this.enableDarkMode();
       this.isChecked = true;
     }
   }
-  
-  public toggle(){
-    if(this.isChecked){
+
+  public toggle() {
+    if (this.isChecked) {
       this.enableLightMode();
-    }
-    else{
+    } else {
       this.enableDarkMode();
     }
   }
-  
-  enableDarkMode(){
-    document.body.classList.add('dark-mode');
-      document.querySelector(".cidades")?.classList.add('dark-mode');
-      const options = document.querySelectorAll(".cidades option");
-      options.forEach((option) => {
-        option.classList.add("dark-mode");
-      })
-      document.querySelector(".label")?.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-  }
-  
-  enableLightMode(){
-    document.body.classList.remove('dark-mode');
-      document.querySelector(".cidades")?.classList.remove('dark-mode');
-      const options = document.querySelectorAll(".cidades option");
-      options.forEach((option) => {
-        option.classList.remove("dark-mode");
-      })
-      document.querySelector(".label")?.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-  }
-  
+
+  enableDarkMode() {
+    this.renderer.addClass(this.bodyElement.body, 'dark-mode');
+    localStorage.setItem('theme', 'dark');
   }
 
+  enableLightMode() {
+    this.renderer.removeClass(this.bodyElement.body, 'dark-mode');
+    localStorage.setItem('theme', 'light');
+  }
+}

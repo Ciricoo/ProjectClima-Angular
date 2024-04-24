@@ -1,26 +1,25 @@
-table{
+table {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    img{
-        width: 40px;
+    img {
+        width: 60px;
     }
 
-    tr{
+    tr {
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 10px;
+        gap: 13px;
     }
 
-    hr{
+    hr {
         color: white;
-        height: 8rem;
+        height: 11rem;
         margin: 1.5rem;
     }
 
 }
-
