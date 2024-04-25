@@ -8,4 +8,5 @@ import { WeatherService } from 'src/app/services/weather.service';
 })
 export class TemperatureComponent {
   constructor(public weatherService: WeatherService){}
+  
 }
