@@ -10,7 +10,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class TemperatureComponent implements OnInit 
 {
   
-  constructor(private weatherService: WeatherService){}
+  constructor(public weatherService: WeatherService){}
   
   weatherData!: Weather;
 

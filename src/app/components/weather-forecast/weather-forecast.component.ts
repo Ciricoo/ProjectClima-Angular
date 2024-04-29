@@ -12,7 +12,7 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class WeatherForecastComponent implements OnInit
  {
   weatherData!: Weather;
-  constructor(private weatherService: WeatherService) {}
+  constructor(public weatherService: WeatherService) {}
   
   ngOnInit(): void {
     this.weatherForecast()
