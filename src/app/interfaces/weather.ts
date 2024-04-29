@@ -27,7 +27,7 @@ export interface Weather {
       timezone: string;
       forecast: Forecast[];
       cjhukljkref: string;
-    };
+    }
     execution_time: number;
     from_cache: boolean;
   }

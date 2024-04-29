@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Weather } from 'src/app/interfaces/weather';
 
 import { WeatherService } from 'src/app/services/weather.service';
 
@@ -31,17 +32,30 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
+    // this.weatherService.selectedCity = this.selectedCity;
     this.fetchWeatherData();
   }
+  weatherData!: Weather;
 
   fetchWeatherData() {
     this.weatherService.fetchData(this.selectedCity);
+    // this.weatherService.fetchData().subscribe(
+    //   (data: Weather) => {
+    //     this.weatherData = data;
+    //   },
+    // );
   }
 
   onCityChange(event: Event) {
     const optionElement = event.target as HTMLOptionElement;
     this.selectedCity = optionElement.value;
+    // this.weatherService.selectedCity = this.selectedCity;
     this.fetchWeatherData();
     localStorage.setItem('selectedCity', this.selectedCity);
+  }
+  
+  getCityName(): string {
+    localStorage.getItem('selectedCity' || 'Jaraguá do Sul, SC');
+    return this.selectedCity;
   }
 }

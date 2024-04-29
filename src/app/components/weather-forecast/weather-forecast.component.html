@@ -1,19 +1,19 @@
-<main>
+ <main>
   <table>
-    <ng-container *ngFor="let forecast of weatherService.weatherData.results.forecast.slice(0, 5); let isLast = last">
+    <ng-container *ngFor="let forecast of getList(); let isLast = last">
       <tr>
-        <td>{{ forecast.weekday }} - {{ forecast.date }}</td>
+        <td>{{getWeekdayAndDate(forecast)}}</td>
         <td>
-          <img [src]="'./assets/iconsClima/' + forecast.condition + '.svg'" />
+          <img [src]="getIcon(forecast)" />
         </td>
         <td>
-          <div>{{ forecast.max }}° / {{ forecast.min }}°</div>
+          <div>{{ getTemp(forecast) }}</div>
         </td>
         <td>
-          <div>💧{{ forecast.rain_probability }}%</div>
+          <div>{{ getRain(forecast) }}</div>
         </td>
       </tr>
       <hr *ngIf="!isLast">
     </ng-container>
   </table>
-</main>
+</main> 
