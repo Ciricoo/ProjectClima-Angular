@@ -6,7 +6,7 @@ p,
 span {
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--color);
     font-size: 30px;
     margin-top: 35px;
 }
@@ -27,7 +27,7 @@ p {
         letter-spacing: 0.5px;
         cursor: pointer;
         background-color: var(--input);
-        color: #ffffff;
+        color: var(--color);
         border: 6px solid var(--input);
         border-radius: 5px;
         outline: none;

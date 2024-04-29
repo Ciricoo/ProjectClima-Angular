@@ -7,26 +7,32 @@ import { WeatherService } from 'src/app/services/weather.service';
   templateUrl: './temperature.component.html',
   styleUrls: ['./temperature.component.scss']
 })
-export class TemperatureComponent //implements OnInit 
+export class TemperatureComponent implements OnInit 
 {
   
   constructor(public weatherService: WeatherService){}
   
-  // weatherData!: Weather;
+  weatherData!: Weather;
 
-  // ngOnInit(): void {
-  //   this.weatherService.fetchData().subscribe(
-  //     (data: Weather | undefined) => {
-  //       this.weatherData = data as Weather;
-  //     },
-  //   );
-  // }
+  ngOnInit(): void {
+    this.temperature()
+  }
+
+  temperature(){
+    this.weatherService.get().subscribe(
+      (data: Weather | undefined) => {
+        if (data !== undefined) {
+          this.weatherData = data;
+        }
+      },
+    );
+  }
 
   getForecastDescription(): string {
-    return this.weatherService.weatherData ? this.weatherService.weatherData.results.forecast[0].description : '';
+    return this.weatherData ? this.weatherData.results.forecast[0].description : '';
   }
 
   getTemperature(): string {
-    return this.weatherService.weatherData ? this.weatherService.weatherData.results.temp.toString() : '';
+    return this.weatherData ? this.weatherData.results.temp.toString() : '';
   }
 }

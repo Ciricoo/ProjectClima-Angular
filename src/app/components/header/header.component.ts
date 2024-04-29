@@ -10,11 +10,12 @@ import { WeatherService } from 'src/app/services/weather.service';
   providers: [],
 })
 export class HeaderComponent implements OnInit {
-  today = new Date();
+  weatherData!: Weather;
+  selectedCity: string = '';
 
   constructor(public weatherService: WeatherService) {}
 
-  selectedCity: string = '';
+  today = new Date();
 
   cities = [
     { name: 'Jaraguá do Sul, SC' },
@@ -28,34 +29,30 @@ export class HeaderComponent implements OnInit {
     { name: 'Salvador, BA' },
     { name: 'Fortaleza, CE' },
     { name: 'Porto Alegre, RS' },
+ 
   ];
 
   ngOnInit(): void {
     this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
-    // this.weatherService.selectedCity = this.selectedCity;
     this.fetchWeatherData();
   }
-  weatherData!: Weather;
+  
 
   fetchWeatherData() {
-    this.weatherService.fetchData(this.selectedCity);
-    // this.weatherService.fetchData().subscribe(
-    //   (data: Weather) => {
-    //     this.weatherData = data;
-    //   },
-    // );
+    this.weatherService.fetchData().subscribe(
+      (data: Weather) => {
+        this.weatherData = data;
+      },
+    );
   }
 
   onCityChange(event: Event) {
     const optionElement = event.target as HTMLOptionElement;
     this.selectedCity = optionElement.value;
-    // this.weatherService.selectedCity = this.selectedCity;
-    this.fetchWeatherData();
     localStorage.setItem('selectedCity', this.selectedCity);
+    this.fetchWeatherData();
   }
-  
   getCityName(): string {
-    localStorage.getItem('selectedCity' || 'Jaraguá do Sul, SC');
-    return this.selectedCity;
+    return this.weatherData.results.city_name;
   }
 }
