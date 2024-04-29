@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   weatherData!: Weather;
   selectedCity: string = '';
 
-  constructor(public weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService) {}
 
   today = new Date();
 
