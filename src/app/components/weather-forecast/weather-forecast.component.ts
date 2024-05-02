@@ -9,16 +9,15 @@ import { WeatherService } from 'src/app/services/weather.service';
   templateUrl: './weather-forecast.component.html',
   styleUrls: ['./weather-forecast.component.scss']
 })
-export class WeatherForecastComponent implements OnInit
- {
+export class WeatherForecastComponent implements OnInit{
   weatherData!: Weather;
-  constructor(public weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService) {}
   
   ngOnInit(): void {
     this.weatherForecast()
   }
   
- weatherForecast() {
+ weatherForecast(): void {
   this.weatherService.get().subscribe(
     (data: Weather | undefined) => {
       if (data !== undefined) {
@@ -29,7 +28,7 @@ export class WeatherForecastComponent implements OnInit
 }
 
   getList(): Forecast[]{
-    return this.weatherData.results.forecast.slice(0,5);
+    return this.weatherData?.results.forecast.slice(0,5);
   }
 
   getWeekdayAndDate(forecast: Forecast): string {
@@ -41,10 +40,14 @@ export class WeatherForecastComponent implements OnInit
   }
 
   getTemp(forecast: Forecast): string{
-    return `${forecast.max}° / ${forecast.min}`
+    return `${forecast.max}° / ${forecast.min}°`
   }
 
   getRain(forecast: Forecast): string{
     return `💧${forecast.rain_probability}%`
+  }
+
+  wind(forecast: Forecast): string{
+    return `🍃${forecast.wind_speedy}`
   }
 }

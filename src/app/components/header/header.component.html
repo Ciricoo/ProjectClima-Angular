@@ -1,9 +1,9 @@
-<p *ngIf="weatherData">
+<p>
     <i class="bi bi-geo-alt-fill"></i>{{ weatherData.results.city_name }}
 </p>
 
 <div class="change">
-    <select #cidades class="cidades" (change)="onCityChange($event)" [(ngModel)]="selectedCity">
+    <select class="cidades" (change)="onCityChange()" [(ngModel)]="selectedCity">
         <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
     </select>
     

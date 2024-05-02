@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   weatherData!: Weather;
   selectedCity: string = '';
 
-  constructor(public weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService) {}
 
   today = new Date();
 
@@ -29,16 +29,16 @@ export class HeaderComponent implements OnInit {
     { name: 'Salvador, BA' },
     { name: 'Fortaleza, CE' },
     { name: 'Porto Alegre, RS' },
- 
+    { name: 'Presidente Getúlio, SC' },
   ];
 
   ngOnInit(): void {
-    this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
+  this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
     this.fetchWeatherData();
   }
   
 
-  fetchWeatherData() {
+  fetchWeatherData(): void {
     this.weatherService.fetchData().subscribe(
       (data: Weather) => {
         this.weatherData = data;
@@ -46,13 +46,13 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-  onCityChange(event: Event) {
-    const optionElement = event.target as HTMLOptionElement;
-    this.selectedCity = optionElement.value;
+  onCityChange(): void {
     localStorage.setItem('selectedCity', this.selectedCity);
     this.fetchWeatherData();
   }
+  
   getCityName(): string {
     return this.weatherData.results.city_name;
   }
 }
+
