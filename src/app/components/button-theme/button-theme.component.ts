@@ -11,7 +11,7 @@ export class ButtonThemeComponent implements OnInit {
 
   constructor( private renderer: Renderer2, @Inject(DOCUMENT) private bodyElement: Document) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') {
       this.enableDarkMode();
@@ -19,7 +19,7 @@ export class ButtonThemeComponent implements OnInit {
     }
   }
 
-  public toggle() {
+  public toggle(): void {
     if (this.isChecked) {
       this.enableLightMode();
     } else {
@@ -27,12 +27,12 @@ export class ButtonThemeComponent implements OnInit {
     }
   }
 
-  enableDarkMode() {
+  enableDarkMode(): void {
     this.renderer.addClass(this.bodyElement.body, 'dark-mode');
     localStorage.setItem('theme', 'dark');
   }
 
-  enableLightMode() {
+  enableLightMode(): void {
     this.renderer.removeClass(this.bodyElement.body, 'dark-mode');
     localStorage.setItem('theme', 'light');
   }

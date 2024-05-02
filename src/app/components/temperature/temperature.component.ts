@@ -18,7 +18,7 @@ export class TemperatureComponent implements OnInit
     this.temperature()
   }
 
-  temperature(){
+  temperature(): void{
     this.weatherService.get().subscribe(
       (data: Weather | undefined) => {
         if (data !== undefined) {
@@ -29,10 +29,21 @@ export class TemperatureComponent implements OnInit
   }
 
   getForecastDescription(): string {
-    return this.weatherData ? this.weatherData.results.forecast[0].description : '';
+    return this.weatherData?.results.forecast[0].description;
   }
 
-  getTemperature(): string {
-    return this.weatherData ? this.weatherData.results.temp.toString() : '';
+  getTemperature(): number {
+    return this.weatherData?.results.temp;
   }
+
+  nascer(): string{
+    return `${this.weatherData?.results.sunrise}`;
+  }
+
+  por(): string{
+    return `${this.weatherData?.results.sunset};`
+  }
+
+  
+
 }
