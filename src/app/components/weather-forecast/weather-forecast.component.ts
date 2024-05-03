@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { retry } from 'rxjs';
 import { Forecast } from 'src/app/interfaces/forecast';
 import { Weather } from 'src/app/interfaces/weather';
 import { WeatherService } from 'src/app/services/weather.service';
@@ -18,7 +17,8 @@ export class WeatherForecastComponent implements OnInit{
   }
   
  weatherForecast(): void {
-  this.weatherService.get().subscribe(
+  this.weatherService.get().subscribe( // Inscreve-se em um fluxo de dados assíncrono para receber notificações de novos valores. 
+  //Este método é usado para observar um Observable e reagir sempre que um novo valor é emitido.
     (data: Weather | undefined) => {
       if (data !== undefined) {
         this.weatherData = data;
@@ -28,7 +28,7 @@ export class WeatherForecastComponent implements OnInit{
 }
 
   getList(): Forecast[]{
-    return this.weatherData?.results.forecast.slice(0,5);
+    return this.weatherData.results.forecast.slice(0,5);
   }
 
   getWeekdayAndDate(forecast: Forecast): string {

@@ -29,19 +29,19 @@ export class TemperatureComponent implements OnInit
   }
 
   getForecastDescription(): string {
-    return this.weatherData?.results.forecast[0].description;
+    return this.weatherData.results.forecast[0].description;
   }
 
   getTemperature(): number {
-    return this.weatherData?.results.temp;
+    return this.weatherData.results.temp;
   }
 
   nascer(): string{
-    return `${this.weatherData?.results.sunrise}`;
+    return `${this.weatherData.results.sunrise}`;
   }
 
   por(): string{
-    return `${this.weatherData?.results.sunset};`
+    return `${this.weatherData.results.sunset};`
   }
 
   
