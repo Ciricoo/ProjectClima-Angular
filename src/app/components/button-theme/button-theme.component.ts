@@ -8,7 +8,9 @@ import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 })
 export class ButtonThemeComponent implements OnInit {
   isChecked: boolean = false;
-
+ 
+ //Um serviço que fornece métodos para manipulação segura e eficiente do DOM.
+ //Oferecendo métodos para adicionar, remover e modificar elementos do DOM.
   constructor( private renderer: Renderer2, @Inject(DOCUMENT) private bodyElement: Document) {}
 
   ngOnInit(): void {

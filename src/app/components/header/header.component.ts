@@ -48,6 +48,6 @@ export class HeaderComponent implements OnInit {
   }
 
   getCityName(): string {
-    return this.weatherData.results.city_name;
+    return this.weatherData?.results.city_name;
   }
 }

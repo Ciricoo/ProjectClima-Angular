@@ -28,7 +28,7 @@ export class WeatherForecastComponent implements OnInit{
 }
 
   getList(): Forecast[]{
-    return this.weatherData.results.forecast.slice(0,5);
+    return this.weatherData?.results.forecast.slice(0,5);
   }
 
   getWeekdayAndDate(forecast: Forecast): string {
