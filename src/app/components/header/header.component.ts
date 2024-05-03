@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Weather } from 'src/app/interfaces/weather';
-
 import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
@@ -33,26 +32,22 @@ export class HeaderComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-  this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
+    this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
     this.fetchWeatherData();
   }
-  
 
   fetchWeatherData(): void {
-    this.weatherService.fetchData().subscribe(
-      (data: Weather) => {
-        this.weatherData = data;
-      },
-    );
+    this.weatherService.fetchData().subscribe((data: Weather) => {
+      this.weatherData = data;
+    });
   }
 
   onCityChange(): void {
     localStorage.setItem('selectedCity', this.selectedCity);
     this.fetchWeatherData();
   }
-  
+
   getCityName(): string {
     return this.weatherData.results.city_name;
   }
 }
-
