@@ -28,13 +28,23 @@ export class HeaderComponent implements OnInit {
     { name: 'Salvador, BA' },
     { name: 'Fortaleza, CE' },
     { name: 'Porto Alegre, RS' },
-    { name: 'Presidente Getúlio, SC' },
   ];
 
   ngOnInit(): void {
-    this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul, SC';
-    this.fetchWeatherData();
-  }
+    this.selectedCity = localStorage.getItem('selectedCity') || 'Jaraguá do Sul';
+    this.header();
+  } 
+
+  
+  header(): void {
+    this.weatherService.get().subscribe( 
+      (data: Weather | undefined) => {
+        if (data !== undefined) {
+          this.weatherData = data;
+        }
+      },
+    );
+  } 
 
   fetchWeatherData(): void {
     this.weatherService.fetchData().subscribe((data: Weather) => {
@@ -48,6 +58,7 @@ export class HeaderComponent implements OnInit {
   }
 
   getCityName(): string {
-    return this.weatherData.results.city_name;
+    return this.weatherData?.results.city_name;
   }
 }
+

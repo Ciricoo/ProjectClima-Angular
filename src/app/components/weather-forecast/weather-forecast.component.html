@@ -2,18 +2,20 @@
   <table>
     <ng-container *ngFor="let forecast of getList(); let isLast = last">
       <tr>
-        <td>{{getWeekdayAndDate(forecast)}}</td>
+        <td>
+          {{getWeekdayAndDate(forecast)}}
+        </td>
         <td>
           <img [src]="getIcon(forecast)" />
         </td>
         <td>
-          <div>{{ getTemp(forecast) }}</div>
+          {{ getTemp(forecast) }}
         </td>
         <td>
-          <div>{{ getRain(forecast) }}</div>
+          {{ getRain(forecast) }}
         </td>
         <td>
-          <div>{{ wind(forecast)}}</div>
+          {{ wind(forecast) }}
         </td>
       </tr>
       <hr *ngIf="!isLast">
