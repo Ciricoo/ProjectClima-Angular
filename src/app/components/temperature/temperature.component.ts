@@ -7,12 +7,10 @@ import { WeatherService } from 'src/app/services/weather.service';
   templateUrl: './temperature.component.html',
   styleUrls: ['./temperature.component.scss']
 })
-export class TemperatureComponent implements OnInit 
-{
-  
+export class TemperatureComponent implements OnInit {
+  weatherData!: Weather;
+
   constructor(private weatherService: WeatherService){}
-  
-  weatherData?: Weather;
 
   ngOnInit(): void {
     this.temperature()
@@ -28,11 +26,11 @@ export class TemperatureComponent implements OnInit
     );
   }
 
-  getForecastDescription(): string | undefined {
+  getForecastDescription(): string {
     return this.weatherData?.results.forecast[0].description;
   }
 
-  getTemperature(): number | undefined {
+  getTemperature(): number {
     return this.weatherData?.results.temp;
   }
 

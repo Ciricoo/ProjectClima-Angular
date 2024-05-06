@@ -25,7 +25,7 @@ export class WeatherForecastComponent implements OnInit{
       }
     },
   );
-}
+} 
 
   getList(): Forecast[]{
     return this.weatherData?.results.forecast.slice(0,5);
